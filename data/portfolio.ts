@@ -1,0 +1,277 @@
+export const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Education", href: "/education" },
+  { label: "Experience", href: "/experience" },
+  { label: "Projects", href: "/projects" },
+];
+
+export const quickFacts = [
+  "Information Systems @ SMU",
+  "AI + Full-stack Engineering",
+  "Hackathon Builder",
+  "Product-minded Developer",
+];
+
+export const skillGroups = [
+  {
+    title: "Languages",
+    items: ["Python", "TypeScript", "JavaScript", "SQL", "C#"],
+  },
+  {
+    title: "Frontend",
+    items: ["Next.js", "React", "Tailwind CSS", "Responsive UI", "Framer Motion"],
+  },
+  {
+    title: "Backend & Data",
+    items: ["Node.js", "Supabase", "PostgreSQL", "MongoDB", "REST APIs"],
+  },
+  {
+    title: "AI & Automation",
+    items: ["LLM workflows", "AI agents", "Prompt design", "Computer vision", "RAG concepts"],
+  },
+  {
+    title: "Cloud & DevOps",
+    items: ["AWS", "Docker", "GitHub", "Vercel"],
+  },
+  {
+    title: "Creative Tech",
+    items: ["Unity", "Unreal Engine", "Game development", "XR concepts"],
+  },
+];
+
+export const education = [
+  {
+    period: "2025 — Present",
+    school: "Singapore Management University",
+    location: "Singapore",
+    programme: "Bachelor of Science (Information Systems)",
+    description:
+      "Building a stronger foundation in software engineering, product development, data, and AI while staying active in technical communities and competitions.",
+    highlights: [
+      "Honorary Finance Secretary, SMU Artificial Intelligence Club",
+      "Participated in national and regional AI / software hackathons",
+      "Student Assistant supporting university programmes and operations",
+    ],
+  },
+  {
+    period: "Before SMU",
+    school: "Republic Polytechnic",
+    location: "Singapore",
+    programme: "School of Infocomm",
+    description:
+      "Developed practical computing skills through hands-on software, networking, database, web, and project-based coursework.",
+    highlights: [
+      "Built web, networking and software projects in team environments",
+      "Represented the School of Infocomm in external competitions",
+      "Active in student leadership and community-focused activities",
+    ],
+  },
+];
+
+export const experiences = [
+  {
+    period: "2025",
+    organisation: "Octopus8",
+    role: "Project Manager & Data Analyst",
+    location: "Singapore",
+    bullets: [
+      "Coordinated data migration and delivery workflows across software projects.",
+      "Improved analytics templates and tracked implementation progress across stakeholders.",
+      "Bridged operational requirements with technical execution and data quality checks.",
+    ],
+  },
+  {
+    period: "2024",
+    organisation: "Octopus8",
+    role: "Business & Technology Intern",
+    location: "Singapore",
+    bullets: [
+      "Worked across UI implementation, database structure, WordPress customisation and product support.",
+      "Translated business needs into practical technical changes and implementation tasks.",
+      "Supported software delivery for charity and community-oriented digital projects.",
+    ],
+  },
+  {
+    period: "2026 — Present",
+    organisation: "SMU Artificial Intelligence Club",
+    role: "Honorary Finance Secretary",
+    location: "Singapore",
+    bullets: [
+      "Manage budgeting, claims and financial governance for club programmes and events.",
+      "Partner with the executive committee on planning, sponsorship and operational decisions.",
+      "Support an active student AI community through events, partnerships and member initiatives.",
+    ],
+  },
+  {
+    period: "University",
+    organisation: "Singapore Management University",
+    role: "Student Assistant",
+    location: "Singapore",
+    bullets: [
+      "Supported course and programme operations, logistics, administrative workflows and event delivery.",
+      "Balanced part-time responsibilities alongside academic and competition commitments.",
+    ],
+  },
+];
+
+export const projects = [
+  {
+    year: "2026",
+    title: "AP Command Center",
+    subtitle: "Supervity AutoPilot Asia Hackathon · Finance Track · 3rd Place",
+    summary:
+      "A governed, agentic Accounts Payable command center that automates routine invoice work while keeping humans in control of high-risk decisions.",
+    highlights: [
+      "Multi-agent orchestration for extraction, duplicate checks, matching, risk screening and policy decisions",
+      "Human-in-the-loop approvals for vendor onboarding, bank verification and DOA exceptions",
+      "Self-learning fraud pattern workflow using human-confirmed outcomes as reusable knowledge",
+      "AI Insights layer for workload, queue and operational optimisation",
+    ],
+    stack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Supervity", "AI Agents"],
+    featured: true,
+    accent: "violet",
+  },
+  {
+    year: "2026",
+    title: "Smart Tool Log Parser",
+    subtitle: "National AI Student Challenge · Micron Track · Champion",
+    summary:
+      "An AI-powered log processing pipeline for normalising diverse equipment logs into consistent, analysis-ready data for manufacturing operations.",
+    highlights: [
+      "Designed a distributed end-to-end architecture for ingestion and parsing",
+      "Used LLM-based extraction and normalisation to handle varying vendor and firmware log formats",
+      "Added urgency classification to support anomaly detection and predictive maintenance workflows",
+    ],
+    stack: ["Python", "LLMs", "Data Pipelines", "AI", "System Design"],
+    featured: true,
+    accent: "cyan",
+  },
+  {
+    year: "2026",
+    title: "Automated Helpdesk Triage & Routing",
+    subtitle: "SIM AI-GNITION",
+    summary:
+      "An AI-assisted support workflow designed to classify incoming requests and route them to the right handling path more quickly.",
+    highlights: [
+      "Focused on reducing manual triage effort and improving response consistency",
+      "Designed around practical automation rather than a standalone chatbot experience",
+    ],
+    stack: ["AI", "Automation", "Classification", "Workflow Design"],
+    featured: false,
+    accent: "pink",
+  },
+  {
+    year: "2026",
+    title: "Answer and Conquer",
+    subtitle: "Multiplayer Game Project",
+    summary:
+      "A Python/Tkinter multiplayer strategy-and-quiz game built around a 5×5 board, timed turns and networked play.",
+    highlights: [
+      "Implemented multiplayer socket communication and game settings",
+      "Designed configurable timers, player options and board-state interactions",
+    ],
+    stack: ["Python", "Tkinter", "Sockets", "Game Development"],
+    featured: false,
+    accent: "amber",
+  },
+];
+
+export const storyItems = [
+  {
+    id: "academic",
+    label: "Academic Prizes",
+    eyebrow: "tiny trophies, big memories",
+    description: "The competitions and academic wins that made me want to keep learning, building, and trying things that once felt a little scary.",
+    image: "/story/academic.jpg",
+    icon: "academic" as const,
+    category: "achievements" as const,
+    nodeClass: "node-academic",
+    tags: ["Hackathons", "AI", "Problem Solving"],
+    details: [
+      "Champion — National AI Student Challenge 2026, Micron Track",
+      "3rd Place — Supervity AutoPilot Asia Hackathon 2026, Finance Track",
+    ],
+  },
+  {
+    id: "sports",
+    label: "Sports Prizes",
+    eyebrow: "my competitive side",
+    description: "The medals, team photos and little sports stories that remind me that progress is often just showing up, practising, and trying again.",
+    image: "/story/sports.jpg",
+    icon: "sports" as const,
+    category: "achievements" as const,
+    nodeClass: "node-sports",
+    tags: ["Sports", "Teamwork", "Discipline"],
+    details: ["Add your favourite sports award here", "Add a team or competition memory here"],
+  },
+  {
+    id: "student-life",
+    label: "Student Life",
+    eyebrow: "the people between the classes",
+    description: "Clubs, events, hackathons, planning sessions, and the random campus moments that made school feel like much more than lectures.",
+    image: "/story/student-life.jpg",
+    icon: "student" as const,
+    category: "community" as const,
+    nodeClass: "node-student",
+    tags: ["SMUAI", "Leadership", "Campus Life"],
+    details: ["SMU Artificial Intelligence Club", "Student leadership, events and hackathon life"],
+  },
+  {
+    id: "service",
+    label: "Community Service",
+    eyebrow: "showing up for people",
+    description: "Volunteering and service-learning gave me a different kind of classroom — one where listening, patience and small actions matter a lot.",
+    image: "/story/community.jpg",
+    icon: "service" as const,
+    category: "community" as const,
+    nodeClass: "node-service",
+    tags: ["Volunteering", "Outreach", "Service Learning"],
+    details: ["Service Learning Club activities", "Community outreach and volunteering"],
+  },
+  {
+    id: "hobbies",
+    label: "Hobbies",
+    eyebrow: "when my laptop is finally closed",
+    description: "The things I do simply because they make life more fun — little obsessions, comfort shows, creative experiments and whatever I am curious about next.",
+    image: "/story/hobbies.jpg",
+    icon: "hobbies" as const,
+    category: "roots" as const,
+    nodeClass: "node-hobbies",
+    tags: ["Curiosity", "Creative Life", "Fun"],
+    details: ["Shows, games and little creative obsessions", "Exploring new places and collecting memories"],
+  },
+  {
+    id: "myanmar",
+    label: "Where I’m From",
+    eyebrow: "my roots",
+    description: "I’m from Myanmar. This is a small corner for the places, food, culture and memories that still feel like home wherever I am.",
+    image: "/story/myanmar.jpg",
+    icon: "myanmar" as const,
+    category: "roots" as const,
+    nodeClass: "node-myanmar",
+    tags: ["Myanmar", "Home", "Culture"],
+    details: ["Myanmar", "Family, culture and the pieces of home I carry with me"],
+  },
+];
+
+export const socials = [
+  {
+    label: "Email",
+    value: "mmh.su.2025@computing.smu.edu.sg",
+    href: "mailto:mmh.su.2025@computing.smu.edu.sg",
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/su-myat-myat-htay-7342a3271",
+    href: "https://linkedin.com/in/su-myat-myat-htay-7342a3271",
+  },
+];
+
+// Backward-compatible exports retained for the original component files.
+export const badges = skillGroups.flatMap((group) => group.items);
+export const journeyItems = experiences.slice(0, 3).map((item, index) => ({
+  year: item.period,
+  title: `${item.role} · ${item.organisation}`,
+  description: item.bullets[0],
+  color: ["bg-[#ffc7de]", "bg-[#8ce7ff]", "bg-[#baf7b8]"][index],
+}));
