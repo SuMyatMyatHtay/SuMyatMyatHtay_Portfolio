@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Award, Code2, Cpu, Sparkles } from "lucide-react";
 import CodeSticker from "./code-sticker";
+import { useTheme } from "./theme-provider";
 
 export default function AvatarCard() {
+  const { theme } = useTheme();
+
   return (
     <div className="relative mx-auto w-full max-w-[360px]">
       <CodeSticker className="-left-8 top-0" rotate={-8} color="#8ce7ff">
