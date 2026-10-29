@@ -1,9 +1,10 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useHydratedReducedMotion } from "./use-hydrated-reduced-motion";
 
 export default function AmbientBackground() {
-  const reduced = useReducedMotion();
+  const reduced = useHydratedReducedMotion();
 
   return (
     <div className="ambient" aria-hidden="true">

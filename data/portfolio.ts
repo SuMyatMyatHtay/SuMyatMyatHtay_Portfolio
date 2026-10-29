@@ -6,7 +6,7 @@ export const navItems = [
 ];
 
 export const quickFacts = [
-  "Information Systems @ SMU",
+  "Software Engineering @ SMU",
   "AI + Full-stack Engineering",
   "Hackathon Builder",
   "Product-minded Developer",
@@ -19,7 +19,13 @@ export const skillGroups = [
   },
   {
     title: "Frontend",
-    items: ["Next.js", "React", "Tailwind CSS", "Responsive UI", "Framer Motion"],
+    items: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Responsive UI",
+      "Framer Motion",
+    ],
   },
   {
     title: "Backend & Data",
@@ -27,7 +33,13 @@ export const skillGroups = [
   },
   {
     title: "AI & Automation",
-    items: ["LLM workflows", "AI agents", "Prompt design", "Computer vision", "RAG concepts"],
+    items: [
+      "LLM workflows",
+      "AI agents",
+      "Prompt design",
+      "Computer vision",
+      "RAG concepts",
+    ],
   },
   {
     title: "Cloud & DevOps",
@@ -44,7 +56,7 @@ export const education = [
     period: "2025 — Present",
     school: "Singapore Management University",
     location: "Singapore",
-    programme: "Bachelor of Science (Information Systems)",
+    programme: "Bachelor of Science (Software Engineering)",
     description:
       "Building a stronger foundation in software engineering, product development, data, and AI while staying active in technical communities and competitions.",
     highlights: [
@@ -127,7 +139,14 @@ export const projects = [
       "Self-learning fraud pattern workflow using human-confirmed outcomes as reusable knowledge",
       "AI Insights layer for workload, queue and operational optimisation",
     ],
-    stack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Supervity", "AI Agents"],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Supervity",
+      "AI Agents",
+    ],
     featured: true,
     accent: "violet",
   },
@@ -181,7 +200,8 @@ export const storyItems = [
     id: "academic",
     label: "Academic Prizes",
     eyebrow: "tiny trophies, big memories",
-    description: "The competitions and academic wins that made me want to keep learning, building, and trying things that once felt a little scary.",
+    description:
+      "The competitions and academic wins that made me want to keep learning, building, and trying things that once felt a little scary.",
     image: "/story/academic.jpg",
     icon: "academic" as const,
     category: "achievements" as const,
@@ -196,61 +216,81 @@ export const storyItems = [
     id: "sports",
     label: "Sports Prizes",
     eyebrow: "my competitive side",
-    description: "The medals, team photos and little sports stories that remind me that progress is often just showing up, practising, and trying again.",
+    description:
+      "The medals, team photos and little sports stories that remind me that progress is often just showing up, practising, and trying again.",
     image: "/story/sports.jpg",
     icon: "sports" as const,
     category: "achievements" as const,
     nodeClass: "node-sports",
     tags: ["Sports", "Teamwork", "Discipline"],
-    details: ["Add your favourite sports award here", "Add a team or competition memory here"],
+    details: [
+      "Add your favourite sports award here",
+      "Add a team or competition memory here",
+    ],
   },
   {
     id: "student-life",
     label: "Student Life",
     eyebrow: "the people between the classes",
-    description: "Clubs, events, hackathons, planning sessions, and the random campus moments that made school feel like much more than lectures.",
+    description:
+      "Clubs, events, hackathons, planning sessions, and the random campus moments that made school feel like much more than lectures.",
     image: "/story/student-life.jpg",
     icon: "student" as const,
     category: "community" as const,
     nodeClass: "node-student",
     tags: ["SMUAI", "Leadership", "Campus Life"],
-    details: ["SMU Artificial Intelligence Club", "Student leadership, events and hackathon life"],
+    details: [
+      "SMU Artificial Intelligence Club",
+      "Student leadership, events and hackathon life",
+    ],
   },
   {
     id: "service",
     label: "Community Service",
     eyebrow: "showing up for people",
-    description: "Volunteering and service-learning gave me a different kind of classroom — one where listening, patience and small actions matter a lot.",
+    description:
+      "Volunteering and service-learning gave me a different kind of classroom — one where listening, patience and small actions matter a lot.",
     image: "/story/community.jpg",
     icon: "service" as const,
     category: "community" as const,
     nodeClass: "node-service",
     tags: ["Volunteering", "Outreach", "Service Learning"],
-    details: ["Service Learning Club activities", "Community outreach and volunteering"],
+    details: [
+      "Service Learning Club activities",
+      "Community outreach and volunteering",
+    ],
   },
   {
     id: "hobbies",
     label: "Hobbies",
     eyebrow: "when my laptop is finally closed",
-    description: "The things I do simply because they make life more fun — little obsessions, comfort shows, creative experiments and whatever I am curious about next.",
+    description:
+      "The things I do simply because they make life more fun — little obsessions, comfort shows, creative experiments and whatever I am curious about next.",
     image: "/story/hobbies.jpg",
     icon: "hobbies" as const,
     category: "roots" as const,
     nodeClass: "node-hobbies",
     tags: ["Curiosity", "Creative Life", "Fun"],
-    details: ["Shows, games and little creative obsessions", "Exploring new places and collecting memories"],
+    details: [
+      "Shows, games and little creative obsessions",
+      "Exploring new places and collecting memories",
+    ],
   },
   {
     id: "myanmar",
     label: "Where I’m From",
     eyebrow: "my roots",
-    description: "I’m from Myanmar. This is a small corner for the places, food, culture and memories that still feel like home wherever I am.",
+    description:
+      "I’m from Myanmar. This is a small corner for the places, food, culture and memories that still feel like home wherever I am.",
     image: "/story/myanmar.jpg",
     icon: "myanmar" as const,
     category: "roots" as const,
     nodeClass: "node-myanmar",
     tags: ["Myanmar", "Home", "Culture"],
-    details: ["Myanmar", "Family, culture and the pieces of home I carry with me"],
+    details: [
+      "Myanmar",
+      "Family, culture and the pieces of home I carry with me",
+    ],
   },
 ];
 

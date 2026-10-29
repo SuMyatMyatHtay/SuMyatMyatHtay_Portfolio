@@ -1,8 +1,9 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { useHydratedReducedMotion } from "./use-hydrated-reduced-motion";
 
 export type StoryCategory = "achievements" | "community" | "roots";
 
@@ -46,7 +47,7 @@ const categories: Array<{
 ];
 
 export default function StoryTree({ items }: { items: StoryItem[] }) {
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = useHydratedReducedMotion();
   const [activeCategory, setActiveCategory] = useState<StoryCategory | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
@@ -131,7 +132,6 @@ export default function StoryTree({ items }: { items: StoryItem[] }) {
             onClick={() => setActiveCategory((current) => current === category.id ? null : category.id)}
           >
             <img src="/storybook/branch-tag.png" alt="" aria-hidden="true" />
-            <span className="asset-category-cover" aria-hidden="true" />
             <span className="asset-category-label">{category.label}</span>
             <small>{category.subtitle}</small>
           </button>
@@ -172,7 +172,6 @@ export default function StoryTree({ items }: { items: StoryItem[] }) {
                 />
                 <span className="asset-node-placeholder" aria-hidden="true">♡</span>
               </span>
-              <span className="asset-node-label-cover" aria-hidden="true" />
               <span className="asset-node-label">{item.label}</span>
             </motion.button>
           );

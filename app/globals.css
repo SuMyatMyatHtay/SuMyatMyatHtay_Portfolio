@@ -1058,7 +1058,7 @@ p { margin: 0; }
   z-index: 8;
   width: 12.5%;
   min-width: 112px;
-  aspect-ratio: 125 / 80;
+  aspect-ratio: 4 / 3;
   padding: 0;
   border: 0;
   background: transparent;
@@ -1079,15 +1079,18 @@ p { margin: 0; }
 }
 .asset-category-label {
   position: absolute;
-  left: 50%;
-  top: 49%;
-  width: 74%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-display);
-  font-size: clamp(8px, .9vw, 14px);
-  font-weight: 900;
-  line-height: 1;
+  left: 12%;
+  top: 42%;
+  width: 76%;
+  height: 44%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(9px, .9vw, 14px);
+  font-weight: 400;
+  line-height: 1.3;
   text-align: center;
+  text-wrap: balance;
 }
 .asset-category small { display: none; }
 .asset-category:hover,
@@ -1164,15 +1167,18 @@ p { margin: 0; }
 .asset-node-label {
   position:absolute;
   z-index:3;
-  left:50%;
-  top:75%;
-  width:76%;
-  transform:translate(-50%,-50%);
-  font-family:var(--font-display);
-  font-size:clamp(6.5px,.72vw,11px);
-  font-weight:900;
-  line-height:1.05;
+  left:23%;
+  top:62%;
+  width:54%;
+  height:23%;
+  display:grid;
+  place-items:center;
+  font-family:var(--font-body), sans-serif;
+  font-size:clamp(8px,.75vw,12px);
+  font-weight:400;
+  line-height:1.25;
   text-align:center;
+  text-wrap:balance;
 }
 .asset-node-achievements:hover { filter: drop-shadow(0 0 15px rgba(255,173,118,.88)); }
 .asset-node-community:hover { filter: drop-shadow(0 0 15px rgba(137,214,200,.88)); }
@@ -1253,12 +1259,12 @@ p { margin: 0; }
   .asset-grove-note > span { display:none; }
   .asset-grove-note strong { font-size: clamp(.65rem, 3.2vw, .95rem); }
   .asset-category { width: 17%; min-width: 64px; }
-  .asset-category-label { font-size: clamp(6px, 2vw, 9px); }
+  .asset-category-label { font-size: clamp(7px, 1.8vw, 9px); }
   .category-achievements { left: 35%; top: 53%; }
   .category-community { left: 50.5%; top: 57%; }
   .category-roots { left: 66%; top: 53%; }
   .asset-story-node { width: 12%; min-width: 46px; }
-  .asset-node-label { font-size: clamp(5px, 1.55vw, 7px); }
+  .asset-node-label { font-size: clamp(6px, 1.4vw, 8px); }
   .asset-story-node.node-academic { left: 15%; top: 4%; }
   .asset-story-node.node-sports { left: 29%; top: 20%; }
   .asset-story-node.node-student { left: 45%; top: 23%; }

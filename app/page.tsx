@@ -26,7 +26,7 @@ export default function HomePage() {
           </motion.div>
 
           <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.14 }} className="hero-lede">
-            Information Systems student, software engineer and AI builder who likes turning ambitious ideas into products people can actually use.
+            Software Engineering student, software engineer and AI builder who likes turning ambitious ideas into products people can actually use.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.22 }} className="hero-actions">
