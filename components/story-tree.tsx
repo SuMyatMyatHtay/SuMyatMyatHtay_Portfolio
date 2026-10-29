@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useHydratedReducedMotion } from "./use-hydrated-reduced-motion";
 
@@ -18,6 +18,7 @@ export type StoryItem = {
   nodeClass: string;
   tags?: string[];
   details?: string[];
+  slides?: Array<{ title: string; description: string; image: string }>;
 };
 
 const categories: Array<{
@@ -50,22 +51,32 @@ export default function StoryTree({ items }: { items: StoryItem[] }) {
   const reduceMotion = useHydratedReducedMotion();
   const [activeCategory, setActiveCategory] = useState<StoryCategory | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   const selected = useMemo(
     () => items.find((item) => item.id === selectedId) ?? null,
     [items, selectedId],
   );
+  const slides = selected?.slides ?? [];
+  const slide = slides[slideIndex];
+  const image = slide?.image ?? selected?.image;
 
   useEffect(() => {
     if (!selected) return;
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setSelectedId(null);
+      if (slides.length > 1 && (event.key === "ArrowLeft" || event.key === "ArrowRight")) {
+        event.preventDefault();
+        const direction = event.key === "ArrowRight" ? 1 : -1;
+        setSlideIndex((current) => (current + direction + slides.length) % slides.length);
+      }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [selected]);
+  }, [selected, slides.length]);
 
   const openItem = (item: StoryItem) => {
+    setSlideIndex(0);
     setActiveCategory(item.category);
     setSelectedId(item.id);
   };
@@ -212,20 +223,31 @@ export default function StoryTree({ items }: { items: StoryItem[] }) {
               <div className="story-book-spine" aria-hidden="true" />
               <div className="story-book-image">
                 <img
-                  src={selected.image}
-                  alt={`${selected.label} memory`}
+                  key={image}
+                  src={image}
+                  alt={slide?.title ?? `${selected.label} memory`}
+                  className={slide ? "story-slide-photo" : undefined}
                   onError={(event) => { event.currentTarget.style.display = "none"; }}
                 />
                 <div className="story-book-image-placeholder">
                   <span>♡</span>
-                  <small>Add your photo at</small>
-                  <code>{selected.image}</code>
+                  <small>Photo coming soon</small>
                 </div>
+                {slides.length > 1 && (
+                  <div className="story-slide-controls" role="group" aria-label={`${selected.label} photos`}>
+                    <button type="button" aria-label="Previous photo" onClick={() => setSlideIndex((current) => (current - 1 + slides.length) % slides.length)}><ChevronLeft size={20} /></button>
+                    <span>{slideIndex + 1} / {slides.length}</span>
+                    <button type="button" aria-label="Next photo" onClick={() => setSlideIndex((current) => (current + 1) % slides.length)}><ChevronRight size={20} /></button>
+                  </div>
+                )}
               </div>
               <div className="story-book-copy">
                 <p className="story-book-eyebrow">{selected.eyebrow}</p>
                 <h3 id={`story-title-${selected.id}`}>{selected.label}</h3>
-                <p className="story-book-description">{selected.description}</p>
+                <div aria-live="polite" aria-atomic="true">
+                  {slide && <h4 className="story-slide-title">{slide.title}</h4>}
+                  <p className="story-book-description">{slide?.description ?? selected.description}</p>
+                </div>
                 {selected.details && selected.details.length > 0 && (
                   <ul>{selected.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
                 )}

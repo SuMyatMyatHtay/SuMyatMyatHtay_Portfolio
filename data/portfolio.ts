@@ -202,30 +202,60 @@ export const storyItems = [
     eyebrow: "tiny trophies, big memories",
     description:
       "The competitions and academic wins that made me want to keep learning, building, and trying things that once felt a little scary.",
-    image: "/story/academic.jpg",
+    image: "/story/academic/national-ai-student-challenge.jpeg",
     icon: "academic" as const,
     category: "achievements" as const,
     nodeClass: "node-academic",
     tags: ["Hackathons", "AI", "Problem Solving"],
-    details: [
-      "Champion — National AI Student Challenge 2026, Micron Track",
-      "3rd Place — Supervity AutoPilot Asia Hackathon 2026, Finance Track",
+    slides: [
+      {
+        title: "1st Place: National AI Student Challenge",
+        image: "/story/academic/national-ai-student-challenge.jpeg",
+        description: "Winning first place at the National AI Student Challenge was a proud moment in my journey with AI. It is one of the memories I look back on as I keep learning and building.",
+      },
+      {
+        title: "2nd Runner-Up: Supervity AutoPilot Asia",
+        image: "/story/academic/supervity-autopilot-asia.jpeg",
+        description: "Another milestone was placing second runner-up at Supervity AutoPilot Asia. This award is part of the story of how I have explored AI and turned ideas into projects.",
+      },
     ],
   },
   {
     id: "sports",
-    label: "Sports Prizes",
-    eyebrow: "my competitive side",
+    label: "Sports",
+    eyebrow: "from running tracks to dance floors",
     description:
-      "The medals, team photos and little sports stories that remind me that progress is often just showing up, practising, and trying again.",
-    image: "/story/sports.jpg",
+      "From running at Singapore Polytechnic to lifesaving competitions and dancing at university, here is how my sporting journey has unfolded.",
+    image: "/story/sports/poly50.jpeg",
     icon: "sports" as const,
     category: "achievements" as const,
     nodeClass: "node-sports",
-    tags: ["Sports", "Teamwork", "Discipline"],
-    details: [
-      "Add your favourite sports award here",
-      "Add a team or competition memory here",
+    tags: ["Running", "Lifesaving", "Dance"],
+    slides: [
+      {
+        title: "2023: Poly50",
+        image: "/story/sports/poly50.jpeg",
+        description:
+          "Back at Singapore Polytechnic, running was part of my life. This Poly50 photo takes me back to that chapter, before swimming competitions and dance became part of the story. Ohh and our team won the 5th place!",
+      },
+      {
+        title: "2024: Nationals Still Water Competition",
+        image: "/story/sports/lifesaving_nationals.jpeg",
+        description:
+          "In Year 3, I represented Singapore Polytechnic at the Nationals Still Water Competition. From the running track to the pool, lifesaving became the next chapter of my sporting journey.",
+      },
+      {
+        title: "2025: Latin Dance (Caderas Latinas)",
+        image: "/story/sports/latinas.jpeg",
+        description:
+          "When I started university, I tried a different way of moving: Latin dance with Caderas Latinas. My sporting story found its way onto the dance floor. I am the fourth one from the left!",
+      },
+      {
+        title: "2026: Ballroom Dancing",
+        image: "/story/sports/ballare.jpg",
+        description:
+          "Now in my second year at university, I am doing ballroom dancing with Ballare. From Poly50 to lifesaving, Latin dance and now ballroom, this is the chapter I am in today.",
+      },
     ],
   },
   {
@@ -233,15 +263,28 @@ export const storyItems = [
     label: "Student Life",
     eyebrow: "the people between the classes",
     description:
-      "Clubs, events, hackathons, planning sessions, and the random campus moments that made school feel like much more than lectures.",
-    image: "/story/student-life.jpg",
+      "From representing the School of Computing at Singapore Polytechnic to student leadership at SMU, these are the roles that have shaped my campus life.",
+    image: "/story/student-life/soca.jpeg",
     icon: "student" as const,
     category: "community" as const,
     nodeClass: "node-student",
-    tags: ["SMUAI", "Leadership", "Campus Life"],
-    details: [
-      "SMU Artificial Intelligence Club",
-      "Student leadership, events and hackathon life",
+    tags: ["SOCA", "SOCC", "SMUAI", "Leadership"],
+    slides: [
+      {
+        title: "SOCA: School of Computing Ambassador",
+        image: "/story/student-life/soca.jpeg",
+        description: "At Singapore Polytechnic, I was a School of Computing Ambassador (SOCA). Representing my school became part of my student life beyond the classroom.",
+      },
+      {
+        title: "SOCC: Events Department Head | 2022–2024",
+        image: "/story/student-life/socc.jpeg",
+        description: "From 2022 to 2024, I served for two years as Events Department Head of Singapore Polytechnic's School of Computing Club (SOCC). This role was a big part of my student leadership journey at poly.",
+      },
+      {
+        title: "SMUAI: Honorary Finance Secretary | 2026",
+        image: "/story/student-life/smuai.jpeg",
+        description: "In 2026, my student leadership journey continued at university as Honorary Finance Secretary of the SMU Artificial Intelligence Club (SMUAI), bringing together my interest in AI and campus life.",
+      },
     ],
   },
   {
@@ -249,15 +292,23 @@ export const storyItems = [
     label: "Community Service",
     eyebrow: "showing up for people",
     description:
-      "Volunteering and service-learning gave me a different kind of classroom — one where listening, patience and small actions matter a lot.",
-    image: "/story/community.jpg",
+      "From two years volunteering at Newlife Child Care Center to teaching Primary 6 maths at BCare, community service has become part of my story.",
+    image: "/story/community/newlife.jpeg",
     icon: "service" as const,
     category: "community" as const,
     nodeClass: "node-service",
-    tags: ["Volunteering", "Outreach", "Service Learning"],
-    details: [
-      "Service Learning Club activities",
-      "Community outreach and volunteering",
+    tags: ["Volunteering", "Children", "Teaching"],
+    slides: [
+      {
+        title: "Newlife Child Care Center | 2022–2024",
+        image: "/story/community/newlife.jpeg",
+        description: "From 2022 to 2024, I volunteered at Newlife Child Care Center for two years. This was a chapter of my life spent giving my time to children in the community.",
+      },
+      {
+        title: "BCare: Teaching Primary 6 Maths",
+        image: "/story/community/bcare.jpeg",
+        description: "At BCare, I teach Primary 6 maths. It is another way I contribute to the community, sharing what I know and supporting students in their learning.",
+      },
     ],
   },
   {
