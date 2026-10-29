@@ -314,17 +314,35 @@ export const storyItems = [
   {
     id: "hobbies",
     label: "Hobbies",
-    eyebrow: "when my laptop is finally closed",
+    eyebrow: "things I make just for fun",
     description:
-      "The things I do simply because they make life more fun — little obsessions, comfort shows, creative experiments and whatever I am curious about next.",
-    image: "/story/hobbies.jpg",
+      "I love making things, whether that is a pencil drawing, a 3D design, a cute animation, something in the kitchen, or a VR game.",
+    image: "/story/hobbies/3d-animation.jpeg",
     icon: "hobbies" as const,
     category: "roots" as const,
     nodeClass: "node-hobbies",
-    tags: ["Curiosity", "Creative Life", "Fun"],
-    details: [
-      "Shows, games and little creative obsessions",
-      "Exploring new places and collecting memories",
+    tags: ["3D Design", "Animation", "Cooking & Baking", "VR Games", "Pencil Art"],
+    slides: [
+      {
+        title: "3D Design & Cute Animation",
+        image: "/story/hobbies/3d-animation.jpeg",
+        description: "I enjoy 3D design and making cute animations. It is a playful side of creating that I love exploring just for fun.",
+      },
+      {
+        title: "Cooking & Baking",
+        image: "/story/hobbies/cooking-baking.jpeg",
+        description: "Away from the screen, I love cooking and baking. The kitchen is another place where I get to make something of my own.",
+      },
+      {
+        title: "Programming VR Games",
+        image: "/story/hobbies/vr-games.jpeg",
+        description: "I also love programming VR games. It brings my interest in coding and creating together in an interactive world you can step into.",
+      },
+      {
+        title: "Pencil Art",
+        image: "/story/hobbies/pencil-art.jpeg",
+        description: "I love drawing pencil art too. Away from digital tools, a pencil and paper give me another way to express my creativity.",
+      },
     ],
   },
   {
@@ -332,15 +350,33 @@ export const storyItems = [
     label: "Where I’m From",
     eyebrow: "my roots",
     description:
-      "I’m from Myanmar. This is a small corner for the places, food, culture and memories that still feel like home wherever I am.",
-    image: "/story/myanmar.jpg",
+      "My story began in Myanmar and brought me to Singapore in 2022. From my childhood schools to Singapore Polytechnic and SMU, each chapter has brought new places and people into my life.",
+    image: "/story/roots/total-brainworks.jpeg",
     icon: "myanmar" as const,
     category: "roots" as const,
     nodeClass: "node-myanmar",
-    tags: ["Myanmar", "Home", "Culture"],
-    details: [
-      "Myanmar",
-      "Family, culture and the pieces of home I carry with me",
+    tags: ["Myanmar", "Singapore", "School Memories", "Friendship"],
+    slides: [
+      {
+        title: "Childhood in Myanmar: Total Brainworks",
+        image: "/story/roots/total-brainworks.jpeg",
+        description: "That little kid is me! I went to Total Brainworks International School back in Myanmar. This photo takes me back to a childhood chapter, long before my move to Singapore.",
+      },
+      {
+        title: "My Government School Days",
+        image: "/story/roots/government-school.jpeg",
+        description: "Another glimpse of a younger me. I also studied at a government school in Myanmar, another part of the school years that shaped my story before Singapore.",
+      },
+      {
+        title: "2022: A New Chapter in Singapore",
+        image: "/story/roots/singapore-polytechnic.jpeg",
+        description: "In 2022, I came to Singapore and studied at Singapore Polytechnic. Moving from Myanmar marked the beginning of a new chapter in my life and education.",
+      },
+      {
+        title: "SMU: University & New Friendships",
+        image: "/story/roots/smu-friends.jpeg",
+        description: "After graduating from Singapore Polytechnic, I continued my studies at Singapore Management University. Along the way, I have made lots of friends who are now part of my Singapore story.",
+      },
     ],
   },
 ];
