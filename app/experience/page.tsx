@@ -7,13 +7,18 @@ import { experiences } from "../../data/portfolio";
 export const metadata = { title: "Experience" };
 
 export default function ExperiencePage() {
+  const groups = [
+    { title: "Professional experience", items: experiences.filter((item) => item.organisation === "Octopus8") },
+    { title: "Campus roles", items: experiences.filter((item) => item.organisation !== "Octopus8") },
+  ];
   return (
     <PageShell>
-      <PageIntro index="03" eyebrow="Experience" title="Work, leadership, and learning in the real world." body="The roles that taught me how to communicate across teams, ship under constraints, manage responsibility and connect technical work to actual operations." />
-      <AnimatedSection className="section-frame">
-        <div className="section-heading"><p className="eyebrow">Journey</p><h2>Roles that shaped how I build.</h2></div>
+      <PageIntro index="03" eyebrow="Experience" title="Where I contribute." body="My responsibilities across industry work, university operations and student leadership." />
+      {groups.map((group) => (
+      <AnimatedSection className="section-frame experience-group" key={group.title}>
+        <div className="section-heading"><h2>{group.title}</h2></div>
         <div className="experience-list">
-          {experiences.map((item, index) => (
+          {group.items.map((item, index) => (
             <article className="experience-card" key={`${item.organisation}-${item.role}`}>
               <div className="experience-index">0{index + 1}</div>
               <div className="experience-icon"><BriefcaseBusiness size={21} /></div>
@@ -26,6 +31,7 @@ export default function ExperiencePage() {
           ))}
         </div>
       </AnimatedSection>
+      ))}
     </PageShell>
   );
 }

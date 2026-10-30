@@ -55,27 +55,31 @@ export const education = [
   {
     period: "2025 — Present",
     school: "Singapore Management University",
+    shortName: "SMU",
+    logo: "/education/smu-logo.jpg",
+    website: "https://www.smu.edu.sg/",
     location: "Singapore",
     programme: "Bachelor of Science (Software Engineering)",
     description:
-      "Building a stronger foundation in software engineering, product development, data, and AI while staying active in technical communities and competitions.",
+      "Second Major in Artificial Intelligence",
     highlights: [
       "Honorary Finance Secretary, SMU Artificial Intelligence Club",
-      "Participated in national and regional AI / software hackathons",
-      "Student Assistant supporting university programmes and operations",
     ],
   },
   {
-    period: "Before SMU",
-    school: "Republic Polytechnic",
+    period: "2022 – 2025",
+    school: "Singapore Polytechnic",
+    shortName: "SP",
+    logo: "/education/sp-logo.png",
+    website: "https://www.sp.edu.sg/",
     location: "Singapore",
-    programme: "School of Infocomm",
+    programme: "Diploma in Information Technology",
     description:
-      "Developed practical computing skills through hands-on software, networking, database, web, and project-based coursework.",
+      "Specialization in Immersive Simulation with the Minor in 5G and AIOT",
     highlights: [
-      "Built web, networking and software projects in team environments",
-      "Represented the School of Infocomm in external competitions",
-      "Active in student leadership and community-focused activities",
+      "School of Computing Ambassador",
+      "Events Department Head, School of Computing Club",
+      "School Representative, Lifesaving Nationals Still Water Championship",
     ],
   },
 ];
@@ -126,10 +130,55 @@ export const experiences = [
   },
 ];
 
-export const projects = [
+export type PortfolioProject = {
+  year: string;
+  title: string;
+  subtitle: string;
+  summary: string;
+  highlights: string[];
+  stack: string[];
+  featured: boolean;
+  accent: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  category?: "AI systems" | "Web apps" | "Immersive";
+  visual?: "care" | "finance" | "logs" | "agents" | "movies" | "vr";
+  award?: string;
+  contribution?: string;
+  demoAccount?: { email: string; password: string };
+  image?: string;
+  demoUrl?: string;
+};
+
+export const projects: PortfolioProject[] = [
+  {
+    year: "2026",
+    title: "CareCircle",
+    subtitle: "Family care, coordinated together",
+    summary:
+      "A shared space for families to organise care, claim tasks, and keep everyone in the loop. Built around the everyday work of looking after someone you love.",
+    highlights: [
+      "Family spaces with invitation codes and membership permissions",
+      "Shared care tasks, recipient profiles, and appointment journeys",
+      "A Gemini assistant that proposes task actions for confirmation",
+    ],
+    stack: ["Vue 3", "Express", "MongoDB", "Gemini"],
+    liveUrl: "https://care-circle-delta-one.vercel.app/",
+    githubUrl: "https://github.com/SuMyatMyatHtay/CareCircle",
+    category: "Web apps",
+    visual: "care",
+    contribution: "My focus: authentication, family access, avatar customisation, the Gemini assistant, and task claiming workflows.",
+    demoAccount: { email: "alex@carecircle.test", password: "password123" },
+    featured: true,
+    accent: "pink",
+  },
   {
     year: "2026",
     title: "AP Command Center",
+    githubUrl: "https://github.com/SuMyatMyatHtay/supervity_hackathon_teamYeS",
+    category: "AI systems",
+    visual: "finance",
+    award: "3rd place · Supervity AutoPilot Asia",
     subtitle: "Supervity AutoPilot Asia Hackathon · Finance Track · 3rd Place",
     summary:
       "A governed, agentic Accounts Payable command center that automates routine invoice work while keeping humans in control of high-risk decisions.",
@@ -142,7 +191,7 @@ export const projects = [
     stack: [
       "Next.js",
       "TypeScript",
-      "Supabase",
+      "FastAPI",
       "PostgreSQL",
       "Supervity",
       "AI Agents",
@@ -153,6 +202,10 @@ export const projects = [
   {
     year: "2026",
     title: "Smart Tool Log Parser",
+    githubUrl: "https://github.com/SuMyatMyatHtay/NAISCxSMU",
+    category: "AI systems",
+    visual: "logs",
+    award: "Champion · National AI Student Challenge",
     subtitle: "National AI Student Challenge · Micron Track · Champion",
     summary:
       "An AI-powered log processing pipeline for normalising diverse equipment logs into consistent, analysis-ready data for manufacturing operations.",
@@ -161,7 +214,7 @@ export const projects = [
       "Used LLM-based extraction and normalisation to handle varying vendor and firmware log formats",
       "Added urgency classification to support anomaly detection and predictive maintenance workflows",
     ],
-    stack: ["Python", "LLMs", "Data Pipelines", "AI", "System Design"],
+    stack: ["Python", "React", "Kafka", "TimescaleDB"],
     featured: true,
     accent: "cyan",
   },
@@ -193,7 +246,50 @@ export const projects = [
     featured: false,
     accent: "amber",
   },
+  {
+    year: "2026",
+    title: "AvengerAI",
+    subtitle: "Governance for agents that work together",
+    summary: "A middleware layer that gives AI agents defined abilities, checks risky actions, and records the decisions behind multi-agent work.",
+    highlights: ["Agent abilities, risk scoring, and human approval gates", "Secret redaction before outputs reach logs or the frontend", "Shared agent sessions with coordination and audit history"],
+    stack: ["React", "TypeScript", "Node.js", "Docker"],
+    githubUrl: "https://github.com/SuMyatMyatHtay/NUSMU_TikTok",
+    category: "AI systems",
+    visual: "agents",
+    featured: false,
+    accent: "violet",
+  },
+  {
+    year: "2026",
+    title: "MovieHub",
+    subtitle: "Your next watch starts here",
+    summary: "A movie discovery platform with TMDB-powered search, personal watchlists, community reviews, and moderation tools.",
+    highlights: ["Movie discovery, genre recommendations, and search history", "Personal watchlists and community reviews with star ratings", "Admin moderation for submitted movies and reported reviews"],
+    stack: ["Express", "MongoDB", "EJS", "TMDB API"],
+    githubUrl: "https://github.com/SuMyatMyatHtay/MovieHub_IS113",
+    category: "Web apps",
+    visual: "movies",
+    featured: false,
+    accent: "amber",
+  },
+  {
+    year: "2023",
+    title: "SoulRift",
+    subtitle: "Step into a different world",
+    summary: "A virtual reality shooting game built at Singapore Polytechnic, with enemy weak points and distinct character roles.",
+    highlights: ["Immersive VR combat with enemy weak-point targeting", "Character roles and gameplay interaction scripts", "Unity development with Blender assets"],
+    stack: ["Unity", "C#", "Blender", "VR"],
+    githubUrl: "https://github.com/SuMyatMyatHtay/SoulRift",
+    demoUrl: "https://www.youtube.com/watch?v=fhmGhLAPDWM",
+    category: "Immersive",
+    visual: "vr",
+    image: "/projects/soulrift.jpg",
+    featured: false,
+    accent: "cyan",
+  },
 ];
+
+export const selectedProjects = projects.filter((project) => project.githubUrl);
 
 export const storyItems = [
   {
@@ -384,13 +480,13 @@ export const storyItems = [
 export const socials = [
   {
     label: "Email",
-    value: "mmh.su.2025@computing.smu.edu.sg",
-    href: "mailto:mmh.su.2025@computing.smu.edu.sg",
+    value: "summh11@gmail.com",
+    href: "mailto:summh11@gmail.com",
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/su-myat-myat-htay-7342a3271",
-    href: "https://linkedin.com/in/su-myat-myat-htay-7342a3271",
+    value: "linkedin.com/in/sumyatmyathtay/",
+    href: "https://www.linkedin.com/in/sumyatmyathtay/",
   },
 ];
 

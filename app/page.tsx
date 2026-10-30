@@ -6,7 +6,7 @@ import Link from "next/link";
 import PageShell from "../components/page-shell";
 import AnimatedSection from "../components/animated-section";
 import StoryTree from "../components/story-tree";
-import { projects, quickFacts, skillGroups, storyItems } from "../data/portfolio";
+import { projects, storyItems } from "../data/portfolio";
 
 export default function HomePage() {
   const featured = projects.filter((project) => project.featured);
@@ -26,7 +26,7 @@ export default function HomePage() {
           </motion.div>
 
           <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.14 }} className="hero-lede">
-            Software Engineering student, software engineer and AI builder who likes turning ambitious ideas into products people can actually use.
+            I study Software Engineering at SMU and build AI tools and software that turn ideas into useful products.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.22 }} className="hero-actions">
@@ -34,11 +34,6 @@ export default function HomePage() {
             <a className="ghost-button" href="#my-story">Meet the human behind it</a>
           </motion.div>
 
-          <div className="fact-row">
-            {quickFacts.map((fact, index) => (
-              <motion.span key={fact} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.28 + index * 0.06 }}>{fact}</motion.span>
-            ))}
-          </div>
         </div>
 
         <motion.div initial={{ opacity: 0, scale: 0.92, rotate: 2 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }} className="hero-visual">
@@ -61,11 +56,6 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      <section className="marquee-wrap" aria-label="Skills marquee">
-        <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ duration: 22, repeat: Infinity, ease: "linear" }} className="marquee-track">
-          {[...skillGroups.flatMap((group) => group.items), ...skillGroups.flatMap((group) => group.items)].map((item, index) => <span key={`${item}-${index}`}>✦ {item}</span>)}
-        </motion.div>
-      </section>
 
       <AnimatedSection className="section-frame story-world-section" id="my-story">
         <div className="story-world-heading">
@@ -78,32 +68,30 @@ export default function HomePage() {
         <StoryTree items={storyItems} />
       </AnimatedSection>
 
-      <AnimatedSection className="section-frame">
+      <AnimatedSection className="section-frame home-work-section">
         <div className="section-heading split-heading">
-          <div><p className="eyebrow">Featured work</p><h2>Projects with a little bit of obsession behind them.</h2></div>
+          <div><p className="eyebrow">Selected work</p><h2>A glimpse of what I build.</h2></div>
           <Link href="/projects" className="text-link">All projects <ArrowRight size={15} /></Link>
         </div>
-        <div className="featured-grid">
-          {featured.map((project, index) => (
-            <motion.article key={project.title} whileHover={{ y: -8, rotate: index % 2 === 0 ? -0.4 : 0.4 }} className={`project-card accent-${project.accent}`}>
-              <div className="project-card-top"><span>{project.year}</span><span>0{index + 1}</span></div>
-              <p className="project-subtitle">{project.subtitle}</p>
+        <div className="work-preview-grid">
+          {featured.map((project) => (
+            <article key={project.title} className="work-preview">
+              <p className="eyebrow">{project.year}</p>
               <h3>{project.title}</h3>
               <p>{project.summary}</p>
-              <div className="tag-row">{project.stack.slice(0, 5).map((tech) => <span key={tech}>{tech}</span>)}</div>
-              <Link href="/projects" className="project-link">View case study <ArrowRight size={15} /></Link>
-            </motion.article>
+              <Link href={`/projects#${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`} className="project-link">Project details <ArrowRight size={15} /></Link>
+            </article>
           ))}
         </div>
       </AnimatedSection>
 
       <AnimatedSection className="section-frame explore-section">
-        <div className="section-heading"><p className="eyebrow">Explore</p><h2>Pick the chapter you want next.</h2></div>
+        <div className="section-heading"><p className="eyebrow">More details</p><h2>Explore my professional journey.</h2></div>
         <div className="chapter-grid">
           {[
-            ["01", "Education", "Academic background, activities and learning.", "/education"],
-            ["02", "Experience", "Work, leadership and the roles that shaped me.", "/experience"],
-            ["03", "Projects", "Hackathons, software builds and experiments.", "/projects"],
+            ["01", "Education", "Qualifications and areas of study.", "/education"],
+            ["02", "Experience", "Work responsibilities and campus roles.", "/experience"],
+            ["03", "Projects", "Technical decisions, highlights and tools.", "/projects"],
           ].map(([number, title, body, href]) => (
             <Link href={href} key={title} className="chapter-card"><span>{number}</span><div><h3>{title}</h3><p>{body}</p></div><ArrowRight size={20} /></Link>
           ))}

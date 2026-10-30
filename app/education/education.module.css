@@ -1,0 +1,40 @@
+/* Formal education: school headers sit outside the qualification cards. */
+.section { padding-block: 72px 110px; max-width: 1020px; }
+.title { margin-bottom: 38px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 4vw, 2.65rem); font-weight: 600; letter-spacing: -.035em; }
+.timeline { margin-left: 12px; border-left: 1px solid var(--line); }
+.entry { position: relative; padding: 0 0 38px 32px; }
+.entry:last-child { padding-bottom: 0; }
+.dot { position: absolute; left: -13px; top: 8px; display: grid; place-items: center; width: 25px; height: 25px; border: 1px solid var(--line); border-radius: 50%; background: var(--bg-soft); }
+.dot::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--muted); }
+.header { display: flex; align-items: center; gap: 14px; }
+.schoolMark { display: grid; place-items: center; flex: 0 0 60px; height: 60px; overflow: hidden; border-radius: 18px; background: #fff; border: 1px solid #e6e2eb; }
+.schoolLogo { display: block; width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+.header h2 { font-family: var(--font-body), sans-serif; font-size: clamp(1.15rem, 2.6vw, 1.6rem); font-weight: 600; line-height: 1.35; letter-spacing: -.04em; }
+.website { flex: 0 0 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--muted); transition: color .2s, border-color .2s; }
+.website:hover { color: var(--text); border-color: var(--accent); }
+.website:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.meta { margin-top: 5px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.details { display: flex; gap: 15px; margin-top: 20px; padding: 28px; border: 1px solid var(--line); border-radius: 21px; background: var(--surface); }
+.degreeIcon { display: grid; place-items: center; flex: 0 0 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); }
+.detailsCopy { min-width: 0; }
+.details h3 { font-family: var(--font-body), sans-serif; font-size: 18px; font-weight: 600; line-height: 1.5; letter-spacing: -.025em; }
+.specialization { margin-top: 7px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.details h4 { margin-top: 24px; font-family: var(--font-body), sans-serif; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.details ul { margin: 14px 0 0; padding-left: 19px; list-style: disc; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.details li + li { margin-top: 9px; }
+@media (max-width: 620px) {
+  .section { padding-block: 48px 72px; }
+  .title { margin-bottom: 28px; }
+  .entry { padding-left: 23px; padding-bottom: 30px; }
+  .header { flex-wrap: wrap; gap: 10px; }
+  .schoolMark { flex-basis: 46px; height: 46px; border-radius: 14px; font-size: 14px; }
+  .header h2 { flex: 1; min-width: 0; }
+  .website { flex-basis: 32px; height: 32px; }
+  .details { gap: 10px; padding: 20px 16px; border-radius: 17px; }
+  .degreeIcon { flex-basis: 28px; height: 28px; }
+  .degreeIcon svg { width: 17px; }
+  .details h3 { font-size: 16px; }
+  .specialization, .details ul { font-size: 14px; }
+  .details h4 { font-size: 11px; letter-spacing: .1em; }
+}
+

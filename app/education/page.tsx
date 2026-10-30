@@ -1,7 +1,8 @@
-import { BookOpen, GraduationCap, Trophy } from "lucide-react";
+import { Globe, GraduationCap } from "lucide-react";
+import Image from "next/image";
 import PageShell from "../../components/page-shell";
-import PageIntro from "../../components/page-intro";
 import AnimatedSection from "../../components/animated-section";
+import styles from "./education.module.css";
 import { education } from "../../data/portfolio";
 
 export const metadata = { title: "Education" };
@@ -9,29 +10,40 @@ export const metadata = { title: "Education" };
 export default function EducationPage() {
   return (
     <PageShell>
-      <PageIntro index="02" eyebrow="Education" title="Academic background, built through doing." body="A timeline of the places where I learned the fundamentals—and the projects, communities and competitions that made those fundamentals real." />
-
-      <AnimatedSection className="section-frame">
-        <div className="section-heading"><p className="eyebrow">Formal education</p><h2>Where the foundation came from.</h2></div>
-        <div className="timeline">
-          {education.map((item, index) => (
-            <article className="timeline-card" key={item.school}>
-              <div className="timeline-marker"><GraduationCap size={21} /></div>
-              <div className="timeline-meta"><span>{item.period}</span><span>{item.location}</span></div>
-              <h3>{item.school}</h3>
-              <h4>{item.programme}</h4>
-              <p>{item.description}</p>
-              <ul>{item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
-              <span className="timeline-index">0{index + 1}</span>
+      <AnimatedSection className={`section-frame ${styles.section}`}>
+        <h1 className={styles.title}>Formal education</h1>
+        <div className={styles.timeline}>
+          {education.map((item) => (
+            <article className={styles.entry} key={item.school}>
+              <span className={styles.dot} aria-hidden="true" />
+              <header className={styles.header}>
+                <div className={styles.schoolMark}>
+                  <Image
+                    src={item.logo}
+                    alt={`${item.school} logo`}
+                    width={60}
+                    height={60}
+                    className={styles.schoolLogo}
+                  />
+                </div>
+                <h2>{item.school}</h2>
+                <a className={styles.website} href={item.website} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${item.school} website`}><Globe size={19} /></a>
+              </header>
+              <div className={styles.meta}><p>{item.location}</p><p>{item.period}</p></div>
+              <div className={styles.details}>
+                <span className={styles.degreeIcon} aria-hidden="true"><GraduationCap size={22} /></span>
+                <div className={styles.detailsCopy}>
+                  <h3>{item.programme}</h3>
+                  <p className={styles.specialization}>{item.description}</p>
+                  <h4>Activities &amp; Involvement</h4>
+                  <ul>{item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
+                </div>
+              </div>
             </article>
           ))}
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="section-frame education-callouts">
-        <article><BookOpen size={24} /><p className="eyebrow">Learning style</p><h3>Project-first</h3><p>I learn best when theory immediately has somewhere to go: a prototype, workflow, system, experiment or competition.</p></article>
-        <article><Trophy size={24} /><p className="eyebrow">Outside class</p><h3>Competitive building</h3><p>Hackathons have become one of my favourite ways to test ideas quickly, work under pressure and communicate technical decisions clearly.</p></article>
-      </AnimatedSection>
     </PageShell>
   );
 }
